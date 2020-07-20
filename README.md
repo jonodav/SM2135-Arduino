@@ -14,7 +14,7 @@ Only tested on a tuya based light bulb with a SM2135 driver, using a tuya tywe3 
 Declare an instance of the library:
 
 ```c++
-SM2135 sm2135(uint8_t dat, uint8_t clk);
+SM2135 sm2135(uint8_t data, uint8_t clock);
 ```
 Example: 
 ```c++
