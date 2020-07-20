@@ -1,5 +1,7 @@
 # SM2135-Arduino
-Arduino library for interfacing with SM2135 LED drivers, based upon code by Theo Arends for the tasmota firmware
+Arduino library for interfacing with SM2135 LED drivers, based upon code by Theo Arends for the tasmota firmware.
+
+Only tested on a tuya based light bulb with a SM2135 driver, using an ESP8266 based tywe3 module. Please let me know if you have success on other platforms.
 
 
 ## Usage
@@ -16,7 +18,7 @@ SM2135 sm2135(uint8_t dat, uint8_t clk);
 ```
 Example: 
 ```c++
-SM2135 sm2135(12, 14);
+SM2135 sm2135(12, 14); // Pin 12 as data, pin 14 as clock
 ```
 ### Functions
 Set the RGB values:
@@ -25,7 +27,7 @@ setRGB(uint8_t red, uint8_t green, uint8_t blue);
 ```
 Example: 
 ```c++
-setRGB(22, 255, 123); //Cyan
+setRGB(22, 255, 123); // Cyan
 ```
 
 Set the white valuse:
@@ -35,7 +37,7 @@ setWhite(uint8_t warm, uint8_t cold);
 
 Example: 
 ```c++
-setWhite(255, 0); // 100% warm white)
+setWhite(255, 0); // 100% warm white
 ```
 
 ### Full Example
