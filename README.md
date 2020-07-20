@@ -1,5 +1,5 @@
 # SM2135 Arduino
-Arduino library for interfacing with SM2135 LED drivers, based upon code by Theo Arends for the tasmota firmware.
+Arduino library for interfacing with SM2135 LED drivers, based on code by Theo Arends for the tasmota firmware.
 
 Only tested on a tuya based light bulb with a SM2135 driver, using a tuya tywe3 module with a ESP8266. Please let me know if you have success on other platforms.
 
