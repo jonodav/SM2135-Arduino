@@ -56,4 +56,4 @@ void loop() {
   sm2135.setWhite(220, 20);
 }
 ```
-__Note that the driver will only turn on the RGB leds OR white LEDs at a time, so if you call setRGB and then setWhite, it will only turn the white LEDs on.__
+__Note that the driver will only turn on the RGB LEDs OR white LEDs at a time, so if you call setRGB and then setWhite, it will only turn the white LEDs on.__
