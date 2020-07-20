@@ -30,7 +30,7 @@ Example:
 setRGB(22, 255, 123); // Cyan
 ```
 
-Set the white valuse:
+Set the white values:
 ```c++
 setWhite(uint8_t warm, uint8_t cold);
 ```
