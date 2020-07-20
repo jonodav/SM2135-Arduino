@@ -3,6 +3,11 @@ Arduino library for interfacing with SM2135 LED drivers, based upon code by Theo
 
 
 ## Usage
+### Include the library
+```c++
+#include <SM2135.h>
+```
+
 ### Initialisation 
 Declare an instance of the library:
 
@@ -34,6 +39,7 @@ setWhite(255, 0); // 100% warm white)
 ```
 
 ### Full Example
+
 ```c++
 #include <SM2135.h>
 
@@ -50,4 +56,4 @@ void loop() {
   sm2135.setWhite(220, 20);
 }
 ```
-Note that the driver will only turn on the RGB leds OR white LEDs at a time, so if you call setRGB and then setWhite, it will only turn the white LEDs on. 
+**Note that the driver will only turn on the RGB leds OR white LEDs at a time, so if you call setRGB and then setWhite, it will only turn the white LEDs on. **
