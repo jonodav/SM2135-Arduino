@@ -39,6 +39,7 @@ Example:
 ```c++
 setWhite(255, 0); // 100% warm white
 ```
+__Note that the driver will only turn on the RGB LEDs OR white LEDs at a time, so if you call setRGB and then setWhite, it will only turn the white LEDs on.__
 
 ### Full Example
 
@@ -55,7 +56,8 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   sm2135.setRGB(220, 22, 120);
+  delay(2000);
   sm2135.setWhite(220, 20);
+  delay(2000);
 }
 ```
-__Note that the driver will only turn on the RGB LEDs OR white LEDs at a time, so if you call setRGB and then setWhite, it will only turn the white LEDs on.__
