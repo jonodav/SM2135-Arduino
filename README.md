@@ -40,6 +40,7 @@ Example:
 setWhite(255, 0); // 100% warm white
 ```
 I'm not sure that the cool and warm white channels are the right way around in the library as my test device only has one white channel, so please file an issue if this is the case.
+
 __Note that the driver will only turn on the RGB LEDs OR white LEDs at a time, so if you call setRGB and then setWhite, it will only turn the white LEDs on.__
 
 ### Full Example
