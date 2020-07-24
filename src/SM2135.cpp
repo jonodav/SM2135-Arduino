@@ -53,14 +53,19 @@ void SM2135::SM2135Send(uint8_t *buffer, uint8_t size) {
 }
 
 void SM2135::setRGB(uint8_t red, uint8_t green, uint8_t blue) {
-  uint8_t data[6];
+  if(red != _lastRed || green != _lastGreen || blue != _lastBlue || !lastSetRGB) { //Only run if data has changed or driver was last set to white
+    _lastRed = red;
+    _lastGreen = green;
+    _lastBlue = blue;
+    lastSetRGB = true;
+    uint8_t data[6];
     // Color
-/*
-    if ((cur_col[0] + cur_col[1] + cur_col[2]) >= (3 * 256)) {
-      // Scale down to 765 total to fix max power usage of 9W
-      // Currently not needed with setting 3 x 15mA = 45mA = 11W = 765
-    }
-*/
+    /*
+        if ((cur_col[0] + cur_col[1] + cur_col[2]) >= (3 * 256)) {
+          // Scale down to 765 total to fix max power usage of 9W
+          // Currently not needed with setting 3 x 15mA = 45mA = 11W = 765
+        }
+    */
     data[0] = SM2135_ADDR_MC;
     data[1] = SM2135_CURRENT;
     data[2] = SM2135_RGB;
@@ -68,9 +73,14 @@ void SM2135::setRGB(uint8_t red, uint8_t green, uint8_t blue) {
     data[4] = green;  // Red
     data[5] = red;  // Blue
     SM2135Send(data, 6);
+  }
 }
 
 void SM2135::setWhite(uint8_t warm, uint8_t cold) {
+  if(warm != _lastWarm || cold != _lastCold || lastSetRGB) { //Only run if data has changed or driver was last set to RGB
+    _lastWarm = warm;
+    _lastCold = cold;
+    lastSetRGB = false;
     uint8_t data[6];
     data[0] = SM2135_ADDR_MC;
     data[1] = SM2135_CURRENT;
@@ -78,7 +88,8 @@ void SM2135::setWhite(uint8_t warm, uint8_t cold) {
     SM2135Send(data, 3);
     delay(1);
     data[0] = SM2135_ADDR_C;
-    data[1] = warm;  // Warm
-    data[2] = cold;  // Cold
+    data[1] = cold;  // Cold
+    data[2] = warm;  // Warm
     SM2135Send(data, 3);
+  }
 }

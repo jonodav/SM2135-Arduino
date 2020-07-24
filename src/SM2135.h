@@ -53,6 +53,12 @@ class SM2135 {
         void SM2135Send(uint8_t *buffer, uint8_t size);
         uint8_t _dat;
         uint8_t _clk; 
+        uint8_t _lastRed = 0;
+        uint8_t _lastGreen = 0;
+        uint8_t _lastBlue = 0;
+        uint8_t _lastWarm = 0;
+        uint8_t _lastCold = 0;
+        bool lastSetRGB = false;
 };
 
 #endif
